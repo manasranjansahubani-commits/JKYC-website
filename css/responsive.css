@@ -82,33 +82,32 @@ body{
 
 /* Hero */
 
-.hero{
-    flex-direction:column-reverse;
-    text-align:center;
-    gap:30px;
-    padding:30px 20px;
+@media(max-width:768px){
+
+.hero-content{
+left:25px;
+right:25px;
+max-width:100%;
 }
 
 .hero-content h1{
-    font-size:34px;
-    line-height:1.3;
+font-size:38px;
 }
 
 .hero-content p{
-    font-size:16px;
+font-size:18px;
 }
 
 .hero-buttons{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:12px;
+flex-direction:column;
 }
 
-.hero-image img{
-    width:100%;
-    max-width:330px;
-    height:auto;
+.btn-primary,
+.btn-secondary{
+width:180px;
+text-align:center;
+}
+
 }
 
 /* ===== About Section Mobile ===== */
@@ -196,6 +195,231 @@ body{
 .footer-links,
 .footer-social{
     margin-top:10px;
+}
+
+}
+/* About Section Mobile Fix */
+
+@media (max-width:768px){
+
+.about-boxes{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.about-boxes .box{
+    width:100%;
+    text-align:center;
+    padding:20px;
+}
+
+.about-boxes .box h3{
+    margin-bottom:10px;
+}
+
+}
+/* Stats Section Mobile Fix */
+
+@media (max-width:768px){
+
+.stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    padding:30px 20px;
+}
+
+.stat-card{
+    width:100%;
+    margin:0;
+    padding:25px 15px;
+}
+
+.stat-card h2{
+    font-size:34px;
+}
+
+.stat-card p{
+    font-size:16px;
+}
+
+}
+/* Leadership Mobile Fix */
+
+@media (max-width:768px){
+
+.leaders,
+.executives{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
+.leader-card{
+    width:100%;
+    max-width:320px;
+    margin:0 auto;
+}
+
+.leader-card img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+.executive-title{
+    text-align:center;
+    margin:35px 0 20px;
+}
+
+}
+/* =========================
+   Footer Mobile Professional
+========================= */
+
+@media (max-width:768px){
+
+.footer{
+    padding:40px 20px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.footer-about{
+    grid-column:1 / -1;
+    text-align:center;
+}
+
+.footer-about h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.footer-about p{
+    font-size:15px;
+    line-height:1.7;
+}
+
+.footer-links,
+.footer-social{
+    text-align:center;
+}
+
+.footer-links h3,
+.footer-social h3{
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.footer-links a,
+.footer-social a{
+    display:block;
+    text-decoration:none;
+    margin:10px 0;
+    font-size:16px;
+}
+
+.footer hr{
+    grid-column:1 / -1;
+    margin:20px 0;
+}
+
+.copyright{
+    grid-column:1 / -1;
+    text-align:center;
+    font-size:14px;
+    line-height:1.6;
+}
+
+}
+/* ===========================
+   HERO MOBILE FIX
+=========================== */
+
+@media screen and (max-width:768px){
+
+html,
+body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    min-height:100vh;
+    padding:0;
+    margin:0;
+}
+
+.hero-slider{
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+.hero-slider img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.45);
+}
+
+.hero-content{
+    position:absolute;
+    top:50%;
+    left:20px;
+    right:20px;
+    transform:translateY(-50%);
+    z-index:10;
+
+    background:transparent !important;
+    padding:0 !important;
+    margin:0 !important;
+
+    color:#fff;
+}
+
+.hero-content h1{
+    font-size:38px;
+    line-height:1.2;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.hero-buttons a{
+    flex:1;
+    text-align:center;
 }
 
 }

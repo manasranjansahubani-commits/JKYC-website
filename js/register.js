@@ -78,7 +78,9 @@ if (photoFile) {
             address: document.getElementById("address").value.trim(),
             bloodGroup: document.getElementById("bloodGroup").value,
             occupation: document.getElementById("occupation").value.trim(),
+            designation: document.getElementById("designation").value,
             aadhaar: document.getElementById("aadhaar").value.trim(),
+            
 
             status: "Pending",
             createdAt: serverTimestamp()

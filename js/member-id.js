@@ -18,6 +18,7 @@ const memberDocId = params.get("id");
 const name = document.getElementById("name");
 const memberId = document.getElementById("memberId");
 const mobile = document.getElementById("mobile");
+const designation = document.getElementById("designation");
 const occupation = document.getElementById("occupation");
 const bloodGroup = document.getElementById("bloodGroup");
 const memberPhoto = document.getElementById("memberPhoto");
@@ -43,11 +44,18 @@ async function loadMember() {
 
         const member = memberSnap.data();
 
-        name.textContent = member.fullName || "N/A";
-        memberId.textContent = member.memberId || "N/A";
-        mobile.textContent = member.mobile || "N/A";
-        occupation.textContent = member.occupation || "N/A";
-        bloodGroup.textContent = member.bloodGroup || "N/A";
+ name.textContent = member.fullName || "N/A";
+memberId.textContent = member.memberId || "N/A";
+mobile.textContent = member.mobile || "N/A";
+
+designation.textContent =
+    member.designation || "General Member";
+
+occupation.textContent =
+    member.occupation || "N/A";
+
+bloodGroup.textContent =
+    member.bloodGroup || "N/A";
 
         memberPhoto.src =
             member.photoURL || "../images/default-user.png";
@@ -61,24 +69,28 @@ async function loadMember() {
             height: 120
         });
 
-    } catch (error) {
+    }catch (error) {
 
-        console.error(error);
-        alert("Failed to Load Member Data");
+    console.error(error);
 
-    }
+    alert(
+        "Error Code: " + error.code +
+        "\n\nError Message: " + error.message
+    );
 
 }
 
-// Start
-loadMember();
+}
 
+// Download Button
 document.getElementById("downloadBtn").addEventListener("click", () => {
 
     const downloadBtn = document.getElementById("downloadBtn");
     const printBtn = document.getElementById("printBtn");
 
-   
+    // Hide buttons
+    downloadBtn.style.display = "none";
+    printBtn.style.display = "none";
 
     // Wait for QR Code rendering
     setTimeout(() => {
@@ -95,7 +107,10 @@ document.getElementById("downloadBtn").addEventListener("click", () => {
             link.href = canvas.toDataURL("image/png");
             link.click();
 
-        
+            // Show buttons again
+            downloadBtn.style.display = "inline-block";
+            printBtn.style.display = "inline-block";
+
         });
 
     }, 600);
@@ -108,3 +123,4 @@ document.getElementById("printBtn").addEventListener("click", () => {
     window.print();
 
 });
+loadMember();

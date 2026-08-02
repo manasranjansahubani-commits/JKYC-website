@@ -13,47 +13,105 @@
 
     <div class="id-card">
 
-        <div class="top">
+        <!-- Header -->
+        <div class="card-header">
 
-            <img src="../images/logo.png" class="logo">
+            <div class="logo-box">
+                <img src="../images/logo.png" class="logo" alt="JKYC Logo">
+            </div>
 
-            <h2>Jana Kalyan Youth Club</h2>
-
-            <p>Talamandali, Patrapada, Angul</p>
+            <div class="club-details">
+                <h2>Jana Kalyan Youth Club</h2>
+                <p>Talamandali, Patrapada, Angul, Odisha</p>
+            </div>
 
         </div>
 
+        <!-- Ribbon -->
+        <div class="member-ribbon">
+            MEMBER ID CARD
+        </div>
+
+        <!-- Watermark -->
+        <img src="../images/logo.png" class="watermark" alt="Watermark">
+
+        <!-- Member Photo -->
         <div class="photo-box">
 
             <img id="memberPhoto"
-     src="../images/default-user.png"
-     crossorigin="anonymous">
+                 src="../images/default-user.png"
+                 crossorigin="anonymous">
 
         </div>
 
+        <!-- Details -->
         <div class="details">
 
-            <p><b>Name :</b> <span id="name">Loading...</span></p>
+            <h3 id="name">Loading...</h3>
 
-            <p><b>Member ID :</b> <span id="memberId"></span></p>
+            <div class="detail-row">
+                <span>Member ID</span>
+                <strong id="memberId"></strong>
+            </div>
 
-            <p><b>Mobile :</b> <span id="mobile"></span></p>
+           <!-- Designation Badge -->
+<div class="designation-badge">
+    <span id="designation">General Member</span>
+</div>
 
-            <p><b>Occupation :</b> <span id="occupation"></span></p>
+            <div class="detail-row">
+                <span>Mobile</span>
+                <strong id="mobile"></strong>
+            </div>
 
-            <p><b>Blood Group :</b> <span id="bloodGroup">N/A</span></p>
+            <div class="detail-row">
+                <span>Occupation</span>
+                <strong id="occupation"></strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Blood Group</span>
+                <strong id="bloodGroup"></strong>
+            </div>
 
         </div>
 
-       <div id="qrcode"></div>
+        <!-- QR -->
+        <div class="qr-section">
+
+            <div id="qrcode"></div>
+
+            <small>Scan To Verify Member</small>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="card-footer">
+
+            <div class="sign">
+                President Signature
+            </div>
+
+            <div class="seal">
+                JKYC Official
+            </div>
+
+        </div>
 
     </div>
 
 </div>
 
 <div class="card-buttons">
-    <button id="downloadBtn">⬇️ Download ID Card</button>
-    <button id="printBtn">🖨️ Print ID Card</button>
+
+    <button id="downloadBtn">
+        ⬇️ Download ID Card
+    </button>
+
+    <button id="printBtn">
+        🖨️ Print ID Card
+    </button>
+
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
