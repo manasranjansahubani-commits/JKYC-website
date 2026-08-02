@@ -142,7 +142,6 @@ body{
 #darkModeBtn{
     width:45px;
     height:45px;
-
     border:none;
     border-radius:50%;
 
@@ -1700,35 +1699,39 @@ Latest Notices
 }
 
 .navbar{
-    position:fixed;
-    top:0;
-    right:-100%;
-    width:280px;
-    height:100vh;
-    background:#0b5d1e;
-    transition:.4s;
-    padding-top:80px;
-    z-index:9999;
+position:fixed;
+top:0;
+right:-320px;
+left:auto;
+width:300px;
+height:100vh;
+background:#fff;
+transition:.35s;
+z-index:9999;
+box-shadow:-5px 0 20px rgba(0,0,0,.2);
+overflow-y:auto;
 }
 
 .navbar.active{
-    right:0;
+right:0;
+left:auto;
 }
 
 .navbar ul{
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    padding:0 30px;
-    gap:20px;
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+padding:20px 35px;
+gap:22px;
 }
 
 .navbar ul a{
-    font-size:18px;
+color:#222;
+font-size:18px;
+font-weight:600;
 }
 
 }
-
 .hero{
 position:relative;
 height:90vh;
@@ -1842,4 +1845,57 @@ color:#000;
 .slide.active{
     opacity:1;
     z-index:1;
+}
+.menu-toggle{
+display:block;
+font-size:30px;
+cursor:pointer;
+color:#fff;
+}
+
+.close-menu{
+position:absolute;
+top:15px;
+right:20px;
+left:auto;
+font-size:35px;
+cursor:pointer;
+color:#444;
+}
+
+@media(min-width:993px){
+
+.navbar{
+    position:fixed;
+    top:0;
+    right:-320px;
+    left:auto;
+    width:300px;
+    height:100vh;
+    background:#fff;
+    transition:.35s;
+    z-index:9999;
+    box-shadow:-5px 0 20px rgba(0,0,0,.2);
+    overflow-y:auto;
+}
+
+.navbar.active{
+    right:0;
+    left:auto;
+}
+
+.navbar ul{
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+padding:20px 35px;
+gap:22px;
+}
+
+.navbar ul a{
+color:#222;
+font-size:18px;
+font-weight:600;
+}
+
 }

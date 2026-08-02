@@ -23,14 +23,7 @@ window.addEventListener("load", function () {
         preloader.style.display = "none";
     }
 });
-const menuToggle = document.getElementById("menuToggle");
-const navbar = document.querySelector(".navbar");
 
-if (menuToggle && navbar) {
-    menuToggle.addEventListener("click", () => {
-        navbar.classList.toggle("active");
-    });
-}
 // ===============================
 // HERO SLIDER
 // ===============================
@@ -59,3 +52,20 @@ if (slides.length > 0) {
     }, 5000);
 
 }
+const menuToggle=document.getElementById("menuToggle");
+const navbar=document.getElementById("navbar");
+const closeMenu=document.getElementById("closeMenu");
+
+menuToggle.onclick=()=>{
+navbar.classList.add("active");
+}
+
+closeMenu.onclick=()=>{
+navbar.classList.remove("active");
+}
+
+document.querySelectorAll(".navbar a").forEach(link=>{
+link.onclick=()=>{
+navbar.classList.remove("active");
+}
+});
