@@ -35,14 +35,40 @@ border-bottom:1px solid #ddd;
 
 <div class="container">
 
-<h2>Member Profile</h2>
+    <h2>Member Details (Admin)</h2>
 
-<div class="info" id="profile"></div>
+    <div class="info">
+
+        <p><strong>Name :</strong> <span id="fullName"></span></p>
+
+        <p><strong>Member ID :</strong> <span id="memberId"></span></p>
+
+        <p><strong>Father Name :</strong> <span id="fatherName"></span></p>
+
+        <p><strong>Mobile :</strong> <span id="mobile"></span></p>
+
+        <p><strong>Email :</strong> <span id="email"></span></p>
+
+        <p><strong>Blood Group :</strong> <span id="bloodGroup"></span></p>
+
+        <p><strong>Occupation :</strong> <span id="occupation"></span></p>
+
+        <p><strong>Address :</strong> <span id="address"></span></p>
+
+        <p><strong>Date of Birth :</strong> <span id="dob"></span></p>
+
+        <br>
+
+        <a id="idCardBtn" class="btn">🆔 Open ID Card</a>
+
+        <a id="editBtn" class="btn">✏️ Edit Member</a>
+
+        <a href="admin.html" class="btn">⬅️ Back Admin</a>
+
+    </div>
 
 </div>
 
-<script type="module" src="../js/firebase.js"></script>
-<script type="module" src="../js/member-profile.js"></script>
-
+<script type="module" src="../js/member-details.js"></script>
 </body>
 </html>

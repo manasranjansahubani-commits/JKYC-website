@@ -5,6 +5,7 @@
 body{
     background:#f5f7fb;
     font-family:Arial,Helvetica,sans-serif;
+    padding-top:90px;
 }
 
 .admin-container{
@@ -152,15 +153,19 @@ button:hover{
 
 /* Responsive */
 
-@media(max-width:768px){
+@media (max-width:768px){
 
 .header{
     flex-direction:column;
+    position:relative !important;
+    top:auto !important;
 }
 
 .navbar ul{
-    flex-direction:column;
-    gap:10px;
+    flex-direction:row;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
 }
 
 .admin-table{
@@ -177,6 +182,7 @@ button:hover{
 }
 
 }
+
 .edit-btn{
     background:#ffc107;
     color:#000;
@@ -569,4 +575,203 @@ button:hover{
     height:48px;
     border-radius:10px;
     font-weight:bold;
+}
+/* ==========================
+   ADMIN HEADER
+========================== */
+
+.admin-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 25px;
+    background:#0b5d1e;
+    color:#fff;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.admin-header .logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.admin-header .logo img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+}
+
+.admin-navbar ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+    margin:0;
+    padding:0;
+}
+
+.admin-navbar ul li a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+@media (max-width:768px){
+
+.admin-header{
+    flex-direction:column;
+    gap:15px;
+    text-align:center;
+}
+
+.admin-navbar ul{
+    flex-direction:column;
+    gap:12px;
+}
+
+}
+/* ===== Admin Header ===== */
+
+.admin-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:linear-gradient(135deg,#0b3d0b,#1b8f1b);
+    color:#fff;
+    position:fixed;
+    top:0;
+    width: 100%;
+    z-index:999;
+}
+
+.admin-logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.admin-logo img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+}
+
+.admin-logo .club-name h1{
+    font-size:30px;
+    margin:0;
+    color:#fff;
+}
+
+.admin-logo .club-name p{
+    margin:5px 0 0;
+    color:#eee;
+}
+
+.admin-navbar ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.admin-navbar ul li a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* ===== Mobile ===== */
+@media (max-width:768px){
+
+.admin-header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:15px;
+    padding:20px;
+}
+
+.admin-logo{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.admin-logo img{
+    width:70px;
+    height:70px;
+    margin-bottom:10px;
+}
+
+.admin-navbar{
+    width:100%;
+}
+
+.admin-navbar ul{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.admin-navbar ul li{
+    margin:0;
+}
+
+.admin-navbar ul li a{
+    display:block;
+    font-size:16px;
+    padding:8px 12px;
+    text-decoration:none;
+}
+
+#logoutBtn{
+    width:180px;
+    margin-top:10px;
+}
+
+}
+
+/* ===== FINAL SAFE MOBILE OVERRIDE ===== */
+@media (max-width:768px){
+.admin-header{
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:center!important;
+ justify-content:center!important;
+ gap:12px!important;
+ padding:15px!important;
+}
+.admin-logo{
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:center!important;
+}
+.admin-navbar{
+ width:100%!important;
+}
+.admin-navbar ul{
+ display:flex!important;
+ flex-wrap:wrap!important;
+ flex-direction:row!important;
+ justify-content:center!important;
+ gap:12px!important;
+ position:static!important;
+ width:100%!important;
+ background:transparent!important;
+ box-shadow:none!important;
+}
+.admin-navbar ul li a{
+ padding:6px 10px!important;
+}
 }

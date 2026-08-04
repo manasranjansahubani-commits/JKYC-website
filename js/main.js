@@ -52,20 +52,34 @@ if (slides.length > 0) {
     }, 5000);
 
 }
-const menuToggle=document.getElementById("menuToggle");
-const navbar=document.getElementById("navbar");
-const closeMenu=document.getElementById("closeMenu");
+// ===========================
+// PROFESSIONAL MENU
+// ===========================
 
-menuToggle.onclick=()=>{
-navbar.classList.add("active");
+const menuToggle = document.getElementById("menuToggle");
+const navbar = document.getElementById("navbar");
+const closeMenu = document.getElementById("closeMenu");
+
+if (menuToggle && navbar) {
+    menuToggle.onclick = () => {
+        navbar.classList.add("active");
+    };
 }
 
-closeMenu.onclick=()=>{
-navbar.classList.remove("active");
+if (closeMenu && navbar) {
+    closeMenu.onclick = () => {
+        navbar.classList.remove("active");
+    };
 }
+// Submenu
+document.querySelectorAll(".has-submenu > a").forEach(item => {
 
-document.querySelectorAll(".navbar a").forEach(link=>{
-link.onclick=()=>{
-navbar.classList.remove("active");
-}
-});
+    item.onclick = function(e) {
+
+        e.preventDefault();
+
+        this.parentElement.classList.toggle("open");
+
+    };
+
+});    

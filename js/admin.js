@@ -1,5 +1,9 @@
-import { db } from "./firebase.js";
+import { db, auth } from "./firebase.js";
 
+import {
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
 import {
   collection,
   getDocs,
@@ -7,6 +11,17 @@ import {
   doc,
   updateDoc
 } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+// ===== Admin Authentication =====
+onAuthStateChanged(auth, (user) => {
+
+    if (!user || sessionStorage.getItem("adminLogin") !== "true") {
+
+        window.location.href = "admin-login.html";
+
+    }
+
+});
+
 
 const table = document.getElementById("membersTable");
 const totalMembers = document.getElementById("totalMembers");
@@ -92,11 +107,11 @@ function displayMembers(data) {
         Approve
     </button>
 
-    <a href="member-profile.html?id=${member.id}">
-        <button class="view-btn">
-            View
-        </button>
-    </a>
+   <button
+    class="view-btn"
+    onclick="window.location.href='member-details.html?id=${member.id}'">
+    View
+   </button>
 
     <button
         class="delete-btn"
@@ -155,6 +170,20 @@ window.deleteMember = async function(id){
 
     loadMembers();
 
+}
+// ===== Logout =====
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", async () => {
+
+        await signOut(auth);
+
+        sessionStorage.removeItem("adminLogin");
+
+        window.location.href = "admin-login.html";
+
+    });
 }
 
 loadMembers();

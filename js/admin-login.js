@@ -30,7 +30,7 @@ const showPassword = document.getElementById("showPassword");
 
 onAuthStateChanged(auth, (user) => {
 
-    if (user) {
+    if (user && sessionStorage.getItem("adminLogin") === "true") {
 
         window.location.href = "admin.html";
 
@@ -77,6 +77,7 @@ loginForm.addEventListener("submit", async (e) => {
             userEmail,
             userPassword
         );
+        sessionStorage.setItem("adminLogin", "true");
 
         alert("✅ Login Successful");
 

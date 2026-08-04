@@ -157,32 +157,7 @@ body{
     transform:rotate(20deg) scale(1.1);
 }
 
-/* Mobile */
 
-@media(max-width:992px){
-
-.header{
-    flex-direction:column;
-    gap:15px;
-    padding:18px;
-}
-
-.logo{
-    flex-direction:column;
-    text-align:center;
-}
-
-.navbar ul{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
-}
-
-.club-name h1{
-    font-size:24px;
-}
-
-}
 
 
 .notice-bar{
@@ -1736,8 +1711,7 @@ font-weight:600;
 position:relative;
 height:90vh;
 overflow:hidden;
-
-margin-top: 10px;
+margin-top: 0 px;
 
 }
 
@@ -1781,7 +1755,7 @@ max-width:600px;
 }
 
 .hero-content h1{
-font-size:60px;
+font-size:40px;
 font-weight:800;
 margin-bottom:20px;
 }
@@ -1863,7 +1837,7 @@ cursor:pointer;
 color:#444;
 }
 
-@media(min-width:993px){
+@media(min-width:992px){
 
 .navbar{
     position:fixed;
@@ -1896,6 +1870,97 @@ gap:22px;
 color:#222;
 font-size:18px;
 font-weight:600;
+}
+
+}
+/* ==========================
+   PROFESSIONAL RIGHT MENU
+========================== */
+
+.menu-header{
+    height:70px;
+    background:#222;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    padding:0 20px;
+}
+
+
+.has-submenu{
+    width:100%;
+}
+
+.has-submenu>a{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.submenu{
+    display:none;
+    width:100%;
+    margin:0;
+    padding:0;
+    background:#0b4fa3;
+}
+
+.has-submenu.open .submenu{
+    display:block;
+}
+
+.submenu li{
+    list-style:none;
+}
+
+.submenu li a{
+    display:block;
+    width:100%;
+    padding:16px 45px;
+    background:#0b4fa3;
+    color:#fff !important;
+    text-decoration:none;
+    font-size:16px;
+}
+
+.submenu li a:hover{
+    background:#1565c0;
+}
+/* ===== Mobile Header Fix ===== */
+
+@media (max-width:768px){
+
+.header{
+    display: flex;
+    width: 100%;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 15px;
+}
+
+.logo{
+    gap:10px;
+    align-items: center;
+    flex: 1;
+}
+
+.logo img{
+    width:50px;
+    height:50px;
+}
+
+.club-name h1{
+    font-size:22px;
+}
+
+.club-name p{
+    font-size:12px;
+}
+
+.menu-toggle{
+    font-size:32px;
+    display:block;
 }
 
 }

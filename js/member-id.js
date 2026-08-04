@@ -1,14 +1,34 @@
-// ===============================
-// JKYC Member ID Card
-// member-id.js
-// ===============================
+import { db, auth } from "./firebase.js";
 
-import { db } from "./firebase.js";
+import {
+    onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
 
 import {
     doc,
     getDoc
 } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+
+// ===== Admin Security =====
+onAuthStateChanged(auth, (user) => {
+
+    if (!user || sessionStorage.getItem("adminLogin") !== "true") {
+        window.location.href = "admin-login.html";
+    }
+
+});
+// ===== Admin Security =====
+onAuthStateChanged(auth, (user) => {
+
+    if (!user || sessionStorage.getItem("adminLogin") !== "true") {
+
+        window.location.href = "admin-login.html";
+
+    }
+
+});
+
+
 
 // Get Member ID from URL
 const params = new URLSearchParams(window.location.search);

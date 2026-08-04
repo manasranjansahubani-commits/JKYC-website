@@ -5,7 +5,11 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/12.6.0/firebase
 
 import { getStorage } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-storage.js";
 
-import { getAuth } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+import {
+  getAuth,
+  setPersistence,
+  browserSessionPersistence
+} from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
 
 
 // Firebase Configuration
@@ -33,6 +37,13 @@ const storage = getStorage(app);
 
 // Authentication
 const auth = getAuth(app);
+setPersistence(auth, browserSessionPersistence)
+  .then(() => {
+    console.log("Session Only Login Enabled");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
 
 // Export

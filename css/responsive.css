@@ -511,3 +511,36 @@ font-weight:600;
 }
 
 }
+/* Hero Mobile Fix */
+@media (max-width:768px){
+
+.hero-content{
+    left:20px;
+    right:20px;
+    max-width:calc(100% - 40px);
+}
+
+.hero-content h1{
+    font-size:32px !important;
+    line-height:1.2;
+    letter-spacing:0;
+    word-break:break-word;
+}
+
+.hero-content p{
+    font-size:18px;
+    line-height:1.5;
+}
+
+.hero-buttons{
+    width:100%;
+}
+
+.hero-buttons .btn,
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary{
+    width:100%;
+    max-width:260px;
+}
+
+}
