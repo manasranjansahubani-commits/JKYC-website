@@ -109,6 +109,7 @@ loadNotices();
 // ======================
 
 window.editNotice = function(id, noticeTitle, noticeDescription, noticeDate){
+    alert("edit button clicked");
 
     editNoticeId = id;
 

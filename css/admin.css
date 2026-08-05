@@ -24,8 +24,8 @@ body{
 }
 
 .dashboard-cards .card{
-    background:linear-gradient(135deg,#1565c0,#1976d2);
-    color:#fff;
+    background:linear-gradient(135deg,#ea7806,21#ea8b07);
+    color:#f9f9f9;
     border-radius:15px;
     padding:25px;
     text-align:center;
@@ -39,6 +39,7 @@ body{
 
 .dashboard-cards h2{
     font-size:36px;
+    color: #fff;
     margin-bottom:10px;
 }
 
@@ -215,7 +216,7 @@ button:hover{
 .card h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #0d6efd;
+    color: #5353c9;
 }
 
 .form-group {

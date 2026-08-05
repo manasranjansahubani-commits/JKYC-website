@@ -5,12 +5,23 @@ import {
     getDoc
 } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
+// Get Member ID
 const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+
+let id = params.get("id");
+
+// Backup method
+if (!id) {
+    const url = window.location.href;
+
+    if (url.includes("?id=")) {
+        id = url.split("?id=")[1];
+    }
+}
 
 async function loadProfile() {
 
-    if (!id) {
+    if (!id || id.trim() === "") {
         alert("Member ID not found!");
         window.location.href = "members.html";
         return;
@@ -18,8 +29,7 @@ async function loadProfile() {
 
     try {
 
-        const docRef = doc(db, "members", id);
-        const snap = await getDoc(docRef);
+        const snap = await getDoc(doc(db, "members", id));
 
         if (!snap.exists()) {
             alert("Member not found!");
@@ -30,21 +40,17 @@ async function loadProfile() {
         const d = snap.data();
 
         document.getElementById("fullName").textContent = d.fullName || "";
-        document.getElementById("memberId").textContent = d.memberId || "Not Generated";
+        document.getElementById("memberId").textContent = d.memberId || "";
         document.getElementById("occupation").textContent = d.occupation || "";
-        
+
         const photo = document.getElementById("profilePhoto");
 
-        if (d.photoURL) {
-            photo.src = d.photoURL;
-        } else {
-            photo.src = "../images/default-user.png";
-        }
+        photo.src = d.photoURL || "../images/default-user.png";
 
-    } catch (error) {
+    } catch (err) {
 
-        console.error("Profile Error:", error);
-        alert("Error loading member profile!");
+        console.error(err);
+        alert("Failed to load profile");
 
     }
 

@@ -102,17 +102,14 @@ function displayMembers(data) {
            <td>
 
     <button
-        class="approve-btn"
-        onclick="approveMember('${member.id}')">
-        Approve
-    </button>
+    class="approve-btn"
+    onclick="approveMember('${member.id}')">
+    Approve
+</button>
 
-   <button
-    class="view-btn"
-    onclick="window.location.href='member-details.html?id=${member.id}'">
-    View
-   </button>
-
+<a href="member-details.html?id=${member.id}">
+    <button class="view-btn">👁️ View</button>
+</a>
     <button
         class="delete-btn"
         onclick="deleteMember('${member.id}')">

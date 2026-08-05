@@ -1964,3 +1964,60 @@ font-weight:600;
 }
 
 }
+.notice-bar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffffff;
+    padding:14px 15px;
+    min-height:60px;
+    border-top:2px solid #ff0000;
+    border-bottom:2px solid #ff0000;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+
+.notice-bar a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#ff0000;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:700;
+    line-height:1.5;
+    text-align:center;
+}
+
+#noticeTitle{
+    color:#d60000;
+    font-weight:600;
+}
+
+.blink{
+    color:#ff0000;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    0%,100%{
+        opacity:1;
+    }
+    50%{
+        opacity:.2;
+    }
+}
+
+@media(max-width:768px){
+
+.notice-bar{
+    padding:12px 10px;
+    min-height:50px;
+}
+
+.notice-bar a{
+    font-size:16px;
+    gap:5px;
+    flex-wrap:wrap;
+}
+
+}
