@@ -81,7 +81,7 @@ loginForm.addEventListener("submit", async (e) => {
 
         alert("✅ Login Successful");
 
-        window.location.href = "admin.html";
+        window.location.href = "admin-home.html";
 
     } catch (error) {
 

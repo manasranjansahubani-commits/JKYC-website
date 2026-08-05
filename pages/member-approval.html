@@ -2,19 +2,16 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gallery Management | JKYC</title>
+<title>Member Approval | JKYC Admin</title>
 
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/member-approval.css">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<link rel="stylesheet" href="../css/gallery-admin.css">
 
 </head>
 
@@ -30,7 +27,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <h2>Jana Kalyan Youth Club</h2>
 
-<p>Gallery Management Dashboard</p>
+<p>Member Approval Dashboard</p>
 
 </div>
 
@@ -52,61 +49,76 @@ Back Home
 
 <section class="page-title">
 
-<h1>🖼️ Gallery Management</h1>
+<h1>Member Approval</h1>
 
-<p>Upload, View and Delete Gallery Photos</p>
+<p>Approve, Edit, View and Delete Members</p>
 
 </section>
 
-<div class="container">
+<div class="dashboard">
 
-<form id="galleryForm">
+<div class="stats">
 
-<label>Select Image</label>
+<div class="card">
 
-<input
-type="file"
-id="galleryImage"
-accept="image/*"
-required>
+<h3>Total Members</h3>
 
-<label>Image Title</label>
+<h2 id="totalMembers">0</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Pending</h3>
+
+<h2 id="pendingMembers">0</h2>
+
+</div>
+
+<div class="card">
+
+<h3>Approved</h3>
+
+<h2 id="approvedMembers">0</h2>
+
+</div>
+
+</div>
+
+<div class="table-box">
 
 <input
 type="text"
-id="galleryTitle"
-placeholder="Enter Image Title">
+id="searchInput"
+placeholder="Search Member...">
 
-<button
-type="submit">
+<table>
 
-Upload Image
+<thead>
 
-</button>
+<tr>
 
-</form>
+<th>Name</th>
+<th>Mobile</th>
+<th>Gender</th>
+<th>Occupation</th>
+<th>Action</th>
 
-<hr>
+</tr>
 
-<h2>Gallery Images</h2>
+</thead>
 
-<div id="galleryContainer">
+<tbody id="membersTable">
+
+</tbody>
+
+</table>
 
 </div>
 
 </div>
 
-<footer class="footer">
-
-<p>
-
-© 2026 Jana Kalyan Youth Club | Admin Dashboard
-
-</p>
-
-</footer>
-
-<script type="module" src="../js/gallery-admin.js"></script>
+<script type="module" src="../js/member-approval.js"></script>
 
 </body>
 

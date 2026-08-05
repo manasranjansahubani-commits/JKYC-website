@@ -66,6 +66,17 @@ onAuthStateChanged(auth, async (user) => {
 
     document.getElementById("dob").textContent =
       d.dob || "";
+    document.getElementById("gender").textContent =
+      d.gender || "";
+
+document.getElementById("designation").textContent =
+      d.designation || "";
+
+document.getElementById("aadhaar").textContent =
+      d.aadhaar || "";
+
+document.getElementById("status").textContent =
+      d.status || "";
 
     document.getElementById("idCardBtn").href =
       `member-id.html?id=${id}`;

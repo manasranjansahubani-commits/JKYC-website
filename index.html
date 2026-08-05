@@ -61,13 +61,29 @@
     </nav>
 
 </header>
-<!-- Latest Notice -->
-<div id="latestNotice" class="notice-bar" style="display:none;">
-    <a id="noticeLink" href="pages/notices.html">
-        📢 <span class="blink">LATEST NOTICE :</span>
-        <span id="noticeTitle">Loading...</span>
+<section class="latest-notice">
+
+    <div class="notice-label">
+        <i class="fas fa-bullhorn"></i>
+        LATEST NOTICE
+    </div>
+
+    <div class="notice-marquee">
+        <marquee id="latestNotice" behavior="scroll" direction="left" scrollamount="6">
+
+            Loading latest notice...
+
+        </marquee>
+    </div>
+
+    <a href="pages/notices.html" class="notice-btn">
+
+        View All
+        <i class="fas fa-arrow-right"></i>
+
     </a>
-</div>
+
+</section>
 <section class="hero">
 
 <div class="hero-slider">
@@ -349,6 +365,7 @@
 <script src="js/darkmode.js"></script>
 <script type="module" src="js/notices.js"></script>
 <script type="module" src="js/latest-notice.js"></script>
+<script type="module" src="js/notice-dashboard.js"></script>
 
 </body>
 

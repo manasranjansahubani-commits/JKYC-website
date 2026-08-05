@@ -75,35 +75,46 @@ async function loadNotices() {
     const q = query(
         collection(db, "notices"),
         orderBy("createdAt", "desc")
+    
     );
 
     const snapshot = await getDocs(q);
 
-    snapshot.forEach((docSnap) => {
+       snapshot.forEach((docSnap) => {
 
-        const notice = docSnap.data();
+    const notice = docSnap.data();
 
-        noticeTable.innerHTML += `
-            <tr>
-                <td>${notice.title}</td>
-                <td>${notice.date}</td>
-                <td>
-<button class="edit-btn" onclick="editNotice('${docSnap.id}','${notice.title}','${notice.description}','${notice.date}')">
-✏️ Edit
-</button>
+    const tr = document.createElement("tr");
 
-<button class="delete-btn" onclick="deleteNotice('${docSnap.id}')">
-🗑️ Delete
-</button>
-</td>
-            </tr>
-        `;
+    tr.innerHTML = `
+        <td>${notice.title}</td>
+        <td>${notice.date}</td>
+        <td>
+            <button class="edit-btn">✏️ Edit</button>
+            <button class="delete-btn">🗑️ Delete</button>
+        </td>
+    `;
 
+    tr.querySelector(".edit-btn").addEventListener("click", () => {
+        editNoticeId = docSnap.id;
+
+        title.value = notice.title || "";
+        description.value = notice.description || "";
+        date.value = notice.date || "";
+
+        saveNotice.textContent = "Update Notice";
     });
 
+
+    tr.querySelector(".delete-btn").addEventListener("click", () => {
+        deleteNotice(docSnap.id);
+    });
+
+    noticeTable.appendChild(tr);
+
+});
 }
 
-loadNotices();
 // ======================
 // Edit Notice
 // ======================
