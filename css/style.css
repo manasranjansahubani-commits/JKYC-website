@@ -2143,3 +2143,21 @@ font-weight:600;
         font-size:14px;
     }
 }
+.back-home{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#0b7a2a;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:600;
+    margin:20px;
+    transition:.3s;
+}
+
+.back-home:hover{
+    background:#075d20;
+    transform:translateY(-2px);
+}
